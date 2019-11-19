@@ -1,145 +1,291 @@
+[![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
 
-# Pseudocode Intro
-![images/js-6](images/js-6.png)
-![images/js-7](images/js-7.png)
-![images/js-8](images/js-8.png)
-![images/js-9](images/js-9.png)
+# JavaScript Functions
 
-# Javascript Intro
+## Objectives
 
+By the end of this, developers should be able to:
 
-# JS Background & History
-![images/js_0](images/js_0.png)
-![images/js_1](images/js_1.png)
-![images/js_2](images/js_2.png)
-![images/js_3](images/js_3.png)
-![images/js_4](images/js_4.png)
-![images/js_5](images/js_5.png)
-![images/js-6](images/js_6.png)
-![images/js_7](images/js_7.png)
-![images/js-1](images/js-1.png)
+- Create and invoke functions
+- Define parameters and pass arguments
+- Use return values
 
-# Variables 
+## Preparation
 
-![images/js-11](images/js-11.png)
-![images/js-11a](images/js-11a.png)
-![images/js-11b](images/js-11b.png)
-![images/js-11c](images/js-11c.png)
-![images/js-var1](images/js-var1.png)
-![images/js-var2](images/js-var2.png)
-JavaScript Reserved Words: https://www.w3schools.com/js/js_reserved.asp
-![images/js-var3](images/js-var3.png)
-![images/js-var4](images/js-var4.png)
-![images/js-var4a](images/js-var4a.png)
-Note that I don't use let after the first line.
-This is because the variable has already been declared.
-![images/js-var5](images/js-var5.png)
+1. Fork and clone this repository
+1. Create a new branch, `training`, for your work and change into it.
 
-![images/js-type1](images/js-type1.png)
-![images/js-type2](images/js-type2.png)
-![images/js-12](images/js-12.png)
-![images/js-type4](images/js-type4.png)
-![images/js-type5](images/js-type5.png)
-![images/js-type6](images/js-type6.png)
-![images/js-type7](images/js-type7.png)
-![images/js-type8](images/js-type8.png)
+## Functions
 
-![images/js-13](images/js-13.png)
-![images/js-14](images/js-14.png)
-![images/js-15](images/js-15.png)
+`Function` holds encapsulated executable code.
 
-## String Methods and Properties
-
+Basic syntax:
 ```js
-let name = "sami";
-let capitalName = name.toUpperCase(); // ?
-
-name.length // ?
+const code = function () {}
 ```
 
-## String Concatenation
+### Demo: Functions
+
+Let's write a function that will print a message for us!
+
 ```js
+// define function
+const printHelloWorld = function () {
+  console.log('Hello World!');
+}
 
-let firstName = "sami";
-let lastName = "aldahlawi";
+// invoke function
+printHelloWorld();
 
-let fullName = firstName + " " + lastName;
+// invoke function as many times as we want
+printHelloWorld();
+printHelloWorld();
+printHelloWorld();
+printHelloWorld();
 ```
 
-## Class activity
-## My Future Cat
-- Write a variable called `age`.
-- Write a variable called `name`.
-- Write a variable called `color`.
-- Then write a variable  called `cat` and assign all the previous variables along with a sting concatenation.
-- Then call the the variable `cat` with `console.log(cat)`.
-- Result will be: `My future cat's name is Strawberry, he is 86 years old, and his color is Orange.`
+We can make our functions more useful by passing data into them.
 
-## Calculate the area
-To find the area of a rectangle multiply its height by its width.
-A = H * W
-Result will be : The area of rectangle is '40.20'
+```js
+// define function
+const printHello = function (name) {
+  console.log('Hello ' + name)
+}
 
-## Comparison Operator
-![images/js-20](images/js-20.png)
-![images/js-21](images/js-21.png)
-## Logical operators
-![images/js-26](images/js-26.png)
+// invoke function
+printHello("World");
 
-## Conditions
-![images/js-18](images/js-18.png)
-![images/js-19](images/js-19.png)
+// invoke function as many times as we want
+printHello("World");
+printHello("Mike");
+printHello("Sami");
+printHello("Ahmad");
+```
 
-![images/js-con1](images/js-con1.png)
-![images/js-con2](images/js-con2.png)
-![images/js-con3](images/js-con3.png)
-![images/js-con30](images/js-con30.png)
-![images/js-con4](images/js-con4.png)
-![images/js-con40](images/js-con40.png)
-![images/js-con5](images/js-con5.png)
-![images/js-con6](images/js-con6.png)
-![images/js-con60](images/js-con60.png)
-![images/js-con7](images/js-con7.png)
+When we define a function that accepts data, we call the key word that will represent the data a `parameter`.
 
-![images/js-27](images/js-27.png)
-![images/js-27a](images/js-27a.png)
-# Exercises: if/else if/else statements
+```js
+const myFunctionName = function(parameterName){
+  console.log(parameterName);
+}
+```
 
-## What number's bigger?
+When we pass the data into our function invocation, we call it an `argument`.
 
-Write an if statement that tests two number (numOne and numTwo), and prints the biggest number
+```js
+const myFunctionName = function(parameterName){
+  console.log(parameterName);
+}
 
-## Driving Age
+// arguments can be any data type
+myFunctionName(1);
 
-- Store the user age
-- If age is less than 18, print "Sorry, you can't drive yet"
-- If the age is equal to or over 18, print "Drive away!"
-- Bonus: If the user can't drive yet, tell them how many years they will have to wait. E.g. "Sorry, you have 4 years to wait until you can drive"
+// arguments can also be variables
+const argument = 1;
+myFunctionName(argument);
+```
 
-## [JavaScript-Equality-Table](https://dorey.github.io/JavaScript-Equality-Table/)
+### Code Along: Functions
 
-![images/js-28](images/js-28.png)
-![images/js-28a](images/js-28a.png)
-![images/js-28b](images/js-28b.png)
-![images/js-28c](images/js-28c.png)
-![images/js-28e](images/js-28e.png)
-![images/js-29](images/js-29.png)
+Let's create a function that will add two numbers for us and print the sum.
+```js
+const add = function () {
+  console.log(5 + 10);
+}
 
-# Fizzbuzz
+add();
+```
 
-- Write a program that declares a variable equal to a number 0 - 100
+Next, let's write a function that will add any two numbers for us.
+```js
+const add = function (num1, num2) {
+  console.log(num1 + num2);
+}
 
-- If it is a multiple of 3, print “Fizz” instead of the number.
+add(1, 10);
+add(5, 20);
+```
 
-- If it is a multiple of 5, print “Buzz” instead of the number.
+Next, let's write a function that will subtract any two numbers for us.
+```js
+const subtract = function (num1, num2) {
+  console.log(num1 - num2);
+}
 
-- If it is a multiple of both 3 and 5, print “FizzBuzz” instead of the number.
+add(1, 10);
+add(10, 1);
+```
 
-- Otherwise, print the number
+Notice how the order matters.  The first `argument` will always be assigned to the first `parameter`.
 
+### Demo: Return Values
 
+In mathematics, a function maps one or more inputs to a single output.
+
+In javascript, we also often prefer functions to return us an output instead of `console.log` the output.
+
+```js
+const five = function () {
+  return 2 + 3;
+}
+
+const add = function (a, b) {
+  return a + b;
+}
+
+const adder = function (a, b) {
+  a + b // returns undefined, not the sum of a + b
+}
+
+const fiveSum = five(); // 5
+
+const addSum = add(5,10); // 15
+
+const adderSum = adder(5,10) // undefined
+```
+
+It is important to remember that `console.log` prints its argument to the
+`console` (the terminal using node, the console area of the debug tools using
+chrome) but does not return a value. *THIS IS A COMMON POINT OF CONFUSION* I
+REPEAT, `console.log` does *not* return a value (it returns `undefined`).
+
+### Code Along: Parameters and Arguments
+
+When you create a function, you specify the parameters.  When you call a
+function, you specify the arguments (which are the values that the parameters
+are set to when your function executes).
+
+In JavaScript, functions can be defined as taking zero or more arguments.
+
+```js
+const zero = function () {
+  return 0
+}
+
+// You call this function by writing: `zero()`
+
+const one = function (param) {
+  return param
+}
+
+// You call this function by writing: `one('argumentExample')`
+
+const three = function (param1, param2, param3) {
+  return param2
+}
+
+// You call this function by writing: `three(1, 'two', false)`
+
+// What would happen if we called this function using only one argument?
+
+three(1) // ?
+```
+
+Let's create a function that will accept in any number and add one to it.
+
+```js
+const addOne = function (num) {
+  return num + 1
+}
+```
+
+Let's create a function that will accept in a first name and last name to create a full name.
+
+```js
+const fullName = function (firstName, lastName) {
+  return firstName + " " + lastName
+}
+```
+
+The important piece to remember is that you need the `return` keyword to return
+a value. If you forget it or choose not to include it, the function still
+returns something to the caller, and it will be `undefined`.
+
+### Lab: Functions
+
+Create a file named `functions.js`.
+
+1.  Define a `youRock` function that accepts a string argument of a name and returns a string using that name.
+```js
+youRock('Sami') // 'You rock Sami!'
+youRock('Ahmad') //'You rock Ahmad!'
+```
+
+2.  Define a `square` function that accepts a number argument and returns that number multipled by itself.
+```js
+square(2) // 4
+square(3) // 9
+```
+
+3.  Define a `cube` function that accepts a number argument and returns that number raised to the third power.
+```js
+cube(2) // 8
+cube(3) // 27
+```
+
+4.  Define a `toTheFourth` function that accepts a number argument and returns that number raised to the fourth power.
+```js
+toTheFourth(2) // 16
+toTheFourth(3) // 81
+```
+
+#### Extra Practice
+
+If you finish the Lab, try this challenge.
+
+Write a function that will add, subtract, multiply or divide two numbers and return the answer 
+```js
+calculator(1, 2, "add") // should return 3 
+calculator(1, 2, "subtract") // should return -1
+calculator(1, 2, "divide") // should return .5
+calculator(1, 2, "multiply") // should return 2
+calculator(1, 2, "something else") // should return "calculator can only add, subtract, divide, or multiply
+calculator("cat", 2, "add") // should return "calculator only accepts numbers"
+```
+
+### Lab: FizzBuzz Function
+
+Write a function that accepts an argument of a number
+
+If it is a multiple of 3, return “Fizz” instead of the number.
+
+If it is a multiple of 5, return “Buzz” instead of the number.
+
+If it is a multiple of both 3 and 5, return “FizzBuzz” instead of the number.
+
+Otherwise, return the number
+
+```js
+fizzBuzz(3) // Fizz
+fizzBuzz(15) // FizzBuzz
+rainDrop(7) // 7
+```
+
+### Lab: RainDrop Function
+
+Write a function that accepts an argument of a number
+
+If the number contains 3 as a factor, output 'Pling'.
+
+If the number contains 5 as a factor, output 'Plang'.
+
+If the number contains 7 as a factor, output 'Plong'.
+
+If the number does not contain 3, 5, or 7 as a factor, output the number as a string.
+
+```js
+rainDrop(28) // Plong
+rainDrop(1755) // PlingPlang
+rainDrop(34) // 34
+```
 
 ## Additional Resources
 
-- https://javascript.info/
-- https://www.codeanalogies.com/
+- [Functions Mozilla](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions)
+- [Function Basics JS Info](https://javascript.info/function-basics)
+
+## [License](LICENSE)
+
+1. All content is licensed under a CC­BY­NC­SA 4.0 license.
+1. All software code is licensed under GNU GPLv3. For commercial use or
+    alternative licensing, please contact legal@ga.co.
